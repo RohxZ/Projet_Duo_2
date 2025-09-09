@@ -1,6 +1,17 @@
 //Exercice 1
 function filtrerCommentairesCritiques() {
-    console.log("Filtrage des commentaires critiques");
+    txt = document.getElementsByTagName("p");
+    lst = [];
+    console.log(txt.length);
+    for (i=0;i<txt.length;i++){
+        element = txt[i].textContent;
+        var_tab = element.split(":");
+        if((var_tab[0] == 1) || (var_tab[0] == 2)){
+            lst.push(var_tab[1]);
+        }
+    }
+    /*item.innerHTML = "<li>Nouveau contenu</li>";
+    console.log("Filtrage des commentaires critiques");*/
 }
 
 //Exercice 2 -Partie 1 et 2
