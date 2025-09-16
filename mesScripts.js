@@ -1,15 +1,21 @@
 //Exercice 1
 function filtrerCommentairesCritiques() {
-    txt = document.getElementsByTagName("p");
-    lst = [];
+    let txt = document.getElementsByTagName("p");
+    document.getElementById("critique").style.backgroundColor = "white";
+    let lstHTML = "<ol>";
     console.log(txt.length);
     for (i=0;i<txt.length;i++){
-        element = txt[i].textContent;
-        var_tab = element.split(":");
-        if((var_tab[0] == 1) || (var_tab[0] == 2)){
-            lst.push(var_tab[1]);
+        let element = txt[i].textContent;
+        var_tab = parseInt(element.split(':')[0]);
+        let remarque = element.split(':')[1];
+        if((var_tab == 1)){
+            lstHTML += "<li> Critique urgente:"+ remarque;
+            // supprimer la ligne traitée
+            txt[i].parentNode.removeChild(txt[i]);
         }
     }
+    lstHTML += "<ol>";
+    document.getElementById("critique").innerHTML = lstHTML ;
     /*item.innerHTML = "<li>Nouveau contenu</li>";
     console.log("Filtrage des commentaires critiques");*/
 }
