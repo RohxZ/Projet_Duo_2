@@ -23,6 +23,14 @@ function filtrerCommentairesCritiques() {
 //Exercice 2 -Partie 1 et 2
 function miseAJourVilles() {
   console.log("mise à jour de villes");
+  var phrase = document.getElementById("villes"); // récupère phrase
+  var tab = phrase.textContent.split(","); // créé tableau dans lequel les éléments sont les villes
+
+  var first_element = tab.shift();
+        console.log(tab);
+        tab.push(first_element);
+        console.log(tab.join(","));
+        phrase.innerText = tab.join(",");
 }
 
 function demarrerDefilementVilles() {
